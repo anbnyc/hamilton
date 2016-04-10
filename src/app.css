@@ -1,0 +1,79 @@
+@font-face{
+    font-family: 'La Gioconda TT';
+    src: '../La Gioconda TT.ttf';
+}
+
+body{
+    font-family: 'La Gioconda TT';
+}
+
+.ham-sidebar {
+    height: 100%;
+}
+
+.sidebar-child{
+    margin-top: 0px;
+}
+
+h2{
+  font-weight: bold;
+  fill: #9C7329;
+  margin-bottom: 0px;
+}
+
+.vizContainer{
+    width: 100%;
+    height: 100%;
+    font-size: 11px;
+    fill: #BB8940;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #999;
+  shape-rendering: crispEdges;
+}
+
+.axis.hidden line,
+.axis.hidden path{
+  opacity: 0;
+}
+
+rect {
+  fill: #9C7329;
+}
+
+svg {
+  background-color: #000000;
+}
+
+g.bar text.tooltip {
+  text-anchor: start;
+  font-weight: bold;
+}
+
+g.bar text.label {
+  text-anchor: end;
+}
+
+g.bar.normal text {
+  font-weight: normal;
+  fill: #BB8940;
+}
+
+g.bar.highlight rect, g.bar.highlight text {
+  font-weight: bold;
+  font-size: 12px;
+  fill: #C9BD99;
+}
+
+g.cell rect.highlight {
+    stroke-width: 1px;
+    stroke: #000;
+}
+
+g.cell rect.normal {
+    stroke-width: 0px;  
+    z-index: 60; 
+}

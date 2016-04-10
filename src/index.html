@@ -1,0 +1,60 @@
+<html ng-app="ham-app">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.layouts.css">
+    <link rel="stylesheet" href="app.css">
+    <script type='text/javascript' src="ham-app.controller.js"></script>
+    <script type='text/javascript' src="ham-gantt.directive.js"></script>
+    <script type='text/javascript' src="ham-matrix.directive.js"></script>
+</head>
+<body ng-controller="HamiltonController as hamCtrl">
+    <div layout="row" layout-padding>
+        
+        <div flex="30" layout-padding class="ham-sidebar">
+            <h2>Not Throwing Away My Plot</h2>
+            <h5 class="sidebar-child">Hamilton Original Broadway Cast Recording, visualized</h5>
+            <md-input-container class="sidebar-child" aria-label="no" flex>
+                <span>Choose viz:</span>
+                <md-select ng-model="currentViz" aria-label="no" ng-change="drilldown.data = []">
+                    <md-option ng-repeat="(key,value) in vizzes" ng-value="key">{{value.label}}</md-option>
+                </md-select>
+            </md-input-container>
+            <h5 class="sidebar-child" ng-bind="vizzes[currentViz].headline"></h5>
+            <div id="ham-drilldown" ng-show="drilldown.data.length > 0">
+                <h4>Shared songs:</h4>
+                <ul ng-show="drilldown.data != 'NA'">
+                    <li ng-repeat="item in drilldown.data" ng-bind="item"></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div flex="70" layout="column" class="vizContainer">
+            <div ng-show="currentViz == 'gantt'">
+                <ham-gantt 
+                    ng-if="vizzes.gantt.data" 
+                    data="vizzes.gantt.data" 
+                    style="height:100%;width:100%"
+                    viz-width="vizWidth"
+                    viz-height="vizHeight">
+                </ham-gantt>
+            </div>
+            <div ng-show="currentViz == 'matrix'">
+                <ham-matrix
+                    ng-if="vizzes.matrix.data" 
+                    data="vizzes.matrix.data" 
+                    drilldown="drilldown" 
+                    style="height:100%;width:100%"
+                    viz-width="vizWidth"
+                    viz-height="vizHeight">
+                </ham-matrix>
+            </div>
+        </div>                
+    </div>
+</body>
+</html>
