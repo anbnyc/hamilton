@@ -15,17 +15,23 @@
 </head>
 <body ng-controller="HamiltonController as hamCtrl">
     <div layout="row" layout-padding>
-        
         <div flex="30" layout-padding class="ham-sidebar">
             <h2>Not Throwing Away My Plot</h2>
             <h5 class="sidebar-child">Hamilton Original Broadway Cast Recording, visualized</h5>
             <md-input-container class="sidebar-child" aria-label="no" flex>
-                <span>Choose viz:</span>
+                <label>Choose viz:</label>
                 <md-select ng-model="currentViz" aria-label="no" ng-change="drilldown.data = []">
                     <md-option ng-repeat="(key,value) in vizzes" ng-value="key">{{value.label}}</md-option>
                 </md-select>
             </md-input-container>
             <h5 class="sidebar-child" ng-bind="vizzes[currentViz].headline"></h5>
+            <md-input-container ng-show="currentViz=='bars'" class="sidebar-child" aria-label="no" flex>
+                <label>Display Songs:</label>
+                <md-select ng-model="vizzes.bars.seq">
+                    <md-option>Simultaneously</md-option>
+                    <md-option>Sequentially</md-option>
+                </md-select>
+            <md-input-container>
             <div id="ham-drilldown" ng-show="drilldown.data.length > 0">
                 <h4>Shared songs:</h4>
                 <ul ng-show="drilldown.data != 'NA'">
@@ -33,26 +39,31 @@
                 </ul>
             </div>
         </div>
-        
         <div flex="70" layout="column" class="vizContainer">
-            <div ng-show="currentViz == 'gantt'">
-                <ham-gantt 
-                    ng-if="vizzes.gantt.data" 
+            <div ng-if="currentViz == 'gantt'">
+                <ham-gantt
                     data="vizzes.gantt.data" 
                     style="height:100%;width:100%"
                     viz-width="vizWidth"
                     viz-height="vizHeight">
                 </ham-gantt>
             </div>
-            <div ng-show="currentViz == 'matrix'">
+            <div ng-if="currentViz == 'matrix'">
                 <ham-matrix
-                    ng-if="vizzes.matrix.data" 
                     data="vizzes.matrix.data" 
                     drilldown="drilldown" 
                     style="height:100%;width:100%"
                     viz-width="vizWidth"
                     viz-height="vizHeight">
                 </ham-matrix>
+            </div>
+            <div ng-if="currentViz == 'bars'">
+                <ham-bars
+                    data="vizzes.bars.data" 
+                    style="height:100%;width:100%"
+                    viz-width="vizWidth"
+                    viz-height="vizHeight">
+                </ham-bars>
             </div>
         </div>                
     </div>
