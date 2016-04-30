@@ -15,7 +15,7 @@
     <script type='text/javascript' src="src/ham-bars.directive.js"></script>
 </head>
 <body ng-controller="HamiltonController as hamCtrl">
-    <div layout="row" layout-padding>
+    <div layout-xs="row" layout-padding>
         <div flex="30" layout-padding class="ham-sidebar">
             <h2>Not Throwing Away My Plot</h2>
             <h5 class="sidebar-child">Hamilton Original Broadway Cast Recording, visualized</h5>
@@ -27,7 +27,7 @@
                     </md-option>
                 </md-select>
             </md-input-container>
-            <div ng-show="currentViz=='bars'" layout="row" flex>
+            <div ng-show="currentViz=='bars'" layout-xs="row" flex>
                 <md-input-container class="sidebar-child">
                     <label>Display Songs:</label>
                     <md-select ng-model="vizzes.bars.seq">
