@@ -6,7 +6,7 @@ var app = angular.module('ham-app', ['ngMaterial']);
 
 app.controller('HamiltonController', function($scope, $http, Viz){
     
-    $scope.currentViz = "bars";
+    $scope.currentViz = "gantt";
     
     $scope.vizzes = {
         gantt: new Viz("Soundtrack Chronology", "data/albumTracks.json","In what years did the real life events that this song describes occur?"),
@@ -16,6 +16,7 @@ app.controller('HamiltonController', function($scope, $http, Viz){
     };
     
     $scope.vizzes.bars.seq = "Simultaneously";
+    $scope.vizzes.bars.sort = "Show order";
     
     $scope.drilldown = {
         data: []

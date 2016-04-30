@@ -100,13 +100,11 @@ angular.module('ham-app')
             .attr("x", -3);
             
         svg.append("g")
-            .data(data)
             .attr("class","x axis")
             .attr("transform", "translate(0," + (height - margin.bottom) + ")")
             .call(xAxis);
 
         svg.append("g")
-            .data(data)
             .attr("class","y axis")
             .call(yAxis);
 

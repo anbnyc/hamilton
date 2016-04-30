@@ -17,6 +17,7 @@ angular.module('ham-app')
     
     function link(scope,element,attr){
         var data = scope.data;
+        
         data.sort(function(a,b){ return b.ntracks - a.ntracks });
         
         var parts = [];
@@ -100,7 +101,7 @@ angular.module('ham-app')
             .attr("transform","translate(0,"+2*margin+")")
           .selectAll("text")
             .style("text-anchor","start")
-            .attr("transform","translate(-"+size/2+",5) rotate(-90)");
+            .attr("transform","translate(-"+size/2+",-8) rotate(-45)");
 
         cells.on('mouseover', function(d) { return matrixMouseover(this,d) })
             .on('mouseleave',function(){

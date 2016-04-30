@@ -10,22 +10,65 @@ angular.module('ham-app')
         scope: { 
             data: '=',
             vizWidth: '=',
-            vizHeight: '='
+            vizHeight: '=',
+            sort: '='
         }
     }
     
     function link(scope,element,attr){
         var data = scope.data;
+        var first = true;
+
+        scope.$watch("sort",function(){
+            if(first){
+                first = false;
+            } else {
+                update(scope.sort);                
+            }
+        }, true);
         
-        var runTimeT = 0;
-        for(var i = 0;i<data.length;i++){
-            runTimeT += data[i].runTimeS;            
-            data[i].runTimeT = runTimeT;
-        }
+        function update(order){
+            
+            var sorter = function(a,b){
+                if(order=="Length order"){
+                    return b.runTimeS - a.runTimeS;
+                } else {
+                    return b.id - a.id;
+                } 
+            }
+            
+            data = data.sort(sorter);
+            svg.selectAll('g.bar').sort(sorter);
+            
+            yScale.domain(
+                data.map(function(d,i) { return i; })
+            );
+            
+            var transition = svg.transition().duration(250);
+            
+            transition
+                .selectAll('g.bar')
+                .attr("transform", function(d,i){
+                    return "translate ("+margin.left+","+yScale(i)+")";
+                });
+                
+            transition
+                .select('.y.axis')
+                .call(yAxis);
+                
+            // svg.select('.y.axis')
+            //     .selectAll("g.tick text")
+            //     .attr("transform", function(d,i){
+            //         console.log(i);
+            //         console.log(d);
+            //         return "translate (0,"+yScale(i)+")";
+            //     });
+        };
         
         var margin = {top: 10, bottom: 40, left: 250, right: 20}
             , width = scope.vizWidth
-            , height = scope.vizHeight;
+            , height = scope.vizHeight
+            , timefactor = 10;
 
         var yScale = d3.scale.ordinal()
             .domain(
@@ -45,7 +88,10 @@ angular.module('ham-app')
                 d3.min(data,function(d){ return +d.runTimeS; }),
                 d3.max(data,function(d){ return +d.runTimeS; })
             ])
-            .range([0,10000]);
+            .range([
+                0,
+                timefactor * d3.max(data,function(d){ return +d.runTimeS; })
+            ]);
         
         var xAxis = d3.svg.axis()
             .scale(xScale)
@@ -55,7 +101,7 @@ angular.module('ham-app')
         var yAxis = d3.svg.axis()
             .scale(yScale)
             .orient("left")
-            .tickFormat(function(d,i){ return data[d].trackName; });
+            .tickFormat(function(d,i){ return data[i].trackName; });
             
         var svg = d3.select("ham-bars")
             .append('svg')
@@ -103,21 +149,19 @@ angular.module('ham-app')
             });
             
         svg.append("g")
-            .data(data)
             .attr("class","x axis")
             .attr("transform", "translate("+margin.left+","+(height - margin.bottom) +")")
             .call(xAxis);
 
         svg.append("g")
-            .data(data)
             .attr("class","y axis")
             .attr("transform","translate("+margin.left+",0)")
             .call(yAxis);
             
         svg.append("text")
             .attr("class","axislabel")
-            .attr("transform","translate("+.5*(margin.left+width)+","+(height-10)+")")
-            .text("Song Run Time")
+            .attr("transform","translate("+(margin.left+ .5*width)+","+(height-10)+")")
+            .text("Song Run Time (drawn at "+1000/timefactor+"x actual speed)")
 
     }
   });

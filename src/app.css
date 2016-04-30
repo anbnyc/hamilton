@@ -48,6 +48,11 @@ svg {
   background-color: #000000;
 }
 
+.dropdown{
+  padding: 0px;
+  margin: 8px 0px 8px 0px;
+}
+
 /* */
 
 g.bar text.tooltip {

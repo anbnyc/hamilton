@@ -22,17 +22,27 @@
             <md-input-container class="sidebar-child" aria-label="no" flex>
                 <label>Choose viz:</label>
                 <md-select ng-model="currentViz" aria-label="no" ng-change="drilldown.data = []">
-                    <md-option ng-repeat="(key,value) in vizzes" ng-value="key">{{value.label}}</md-option>
+                    <md-option ng-repeat="(key,value) in vizzes" ng-value="key">
+                        {{value.label}}<h6 class="dropdown">{{value.headline}}</h6>
+                    </md-option>
                 </md-select>
             </md-input-container>
-            <h5 class="sidebar-child" ng-bind="vizzes[currentViz].headline"></h5>
-            <md-input-container ng-show="currentViz=='bars'" class="sidebar-child" aria-label="no" flex>
-                <label>Display Songs:</label>
-                <md-select ng-model="vizzes.bars.seq">
-                    <md-option>Simultaneously</md-option>
-                    <!--<md-option>Sequentially</md-option>-->
-                </md-select>
-            <md-input-container>
+            <div ng-show="currentViz=='bars'" layout="row" flex>
+                <md-input-container class="sidebar-child">
+                    <label>Display Songs:</label>
+                    <md-select ng-model="vizzes.bars.seq">
+                        <md-option>Simultaneously</md-option>
+                        <!--<md-option>Sequentially</md-option>-->
+                    </md-select>
+                </md-input-container>
+                <md-input-container class="sidebar-child">
+                    <label>Sort Songs:</label>
+                    <md-select ng-model="vizzes.bars.sort">
+                        <md-option>Show order</md-option>
+                        <md-option>Length order</md-option>
+                    </md-select>
+                <md-input-container>
+            </div>
             <div id="ham-drilldown" ng-show="drilldown.data.length > 0">
                 <h4>Shared songs:</h4>
                 <ul ng-show="drilldown.data != 'NA'">
@@ -40,6 +50,7 @@
                 </ul>
             </div>
         </div>
+        
         <div flex="70" layout="column" class="vizContainer">
             <div ng-if="currentViz == 'gantt'">
                 <ham-gantt
@@ -63,10 +74,11 @@
             <div ng-if="currentViz == 'bars'">
                 <ham-bars
                     ng-if="vizzes.bars.data"
-                    data="vizzes.bars.data" 
+                    data="vizzes.bars.data"
                     style="height:100%;width:100%"
                     viz-width="vizWidth"
-                    viz-height="vizHeight">
+                    viz-height="vizHeight"
+                    sort="vizzes.bars.sort">
                 </ham-bars>
             </div>
         </div>                
