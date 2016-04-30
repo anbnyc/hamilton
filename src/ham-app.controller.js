@@ -21,9 +21,7 @@ app.controller('HamiltonController', function($scope, $http, Viz){
     
     $scope.vizWidth = angular.element(document.querySelector(".vizContainer"))[0].offsetWidth;
     $scope.vizHeight = angular.element(document.querySelector(".vizContainer"))[0].offsetHeight;
-    
-    console.log($scope.vizHeight);
-    
+        
 });
 
 app.factory('Viz', function($http){

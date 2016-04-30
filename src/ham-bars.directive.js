@@ -5,8 +5,7 @@
 angular.module('ham-app')
   .directive('hamBars', function(){
     return {
-        //link: link,
-        template: "<div class='hey'></div>",
+        link: link,
         restrict: 'E',
         scope: { 
             data: '=',
@@ -16,7 +15,6 @@ angular.module('ham-app')
     }
     
     function link(scope,element,attr){
-        console.log('here');
         var data = scope.data;
         console.log(data);
         
@@ -47,8 +45,7 @@ angular.module('ham-app')
         var xAxis = d3.svg.axis()
             .scale(xScale)
             .orient("bottom")
-            .ticks(15)
-            .tickFormat(format);
+            .ticks(15);
             
         var yAxis = d3.svg.axis()
             .scale(yScale)
