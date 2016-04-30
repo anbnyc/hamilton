@@ -48,6 +48,8 @@ svg {
   background-color: #000000;
 }
 
+/* */
+
 g.bar text.tooltip {
   text-anchor: start;
   font-weight: bold;
@@ -76,4 +78,17 @@ g.cell rect.highlight {
 g.cell rect.normal {
     stroke-width: 0px;  
     z-index: 60; 
+}
+
+/* bars */
+g.bar.normal text.floatinglabel {
+  text-anchor: end;
+  fill: black;
+  font-weight: bold;
+}
+
+svg text.axislabel{
+  text-anchor: end;
+  font-size: 13px;
+  font-weight: bold;
 }

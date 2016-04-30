@@ -16,29 +16,34 @@ angular.module('ham-app')
     
     function link(scope,element,attr){
         var data = scope.data;
-        console.log(data);
         
-        var margin = {top: 10, bottom: 20, left: 30, right: 20}
+        var runTimeT = 0;
+        for(var i = 0;i<data.length;i++){
+            runTimeT += data[i].runTimeS;            
+            data[i].runTimeT = runTimeT;
+        }
+        
+        var margin = {top: 10, bottom: 40, left: 250, right: 20}
             , width = scope.vizWidth
             , height = scope.vizHeight;
 
         var yScale = d3.scale.ordinal()
             .domain(
-                data.map(function(d) { return d.id; })
+                data.map(function(d,i) { return i; })
             )
             .rangeRoundBands([margin.top,height - margin.bottom],.2);
             
         var xScale = d3.scale.linear()
             .domain([
-                d3.min(function(d){ return d.runTimeS; }),
-                d3.max(function(d){ return d.runTimeS; })
+                0,
+                d3.max(data,function(d){ return +d.runTimeS; })
             ])
-            .range([margin.left,width - margin.right]);
+            .range([0,(width - margin.right - margin.left)]);
             
         var timeScale = d3.scale.linear()
             .domain([
-                d3.min(function(d){ return d.runTimeS; }),
-                d3.max(function(d){ return d.runTimeS; })
+                d3.min(data,function(d){ return +d.runTimeS; }),
+                d3.max(data,function(d){ return +d.runTimeS; })
             ])
             .range([0,10000]);
         
@@ -49,8 +54,9 @@ angular.module('ham-app')
             
         var yAxis = d3.svg.axis()
             .scale(yScale)
-            .orient("left");
-
+            .orient("left")
+            .tickFormat(function(d,i){ return data[d].trackName; });
+            
         var svg = d3.select("ham-bars")
             .append('svg')
             .attr("width",width)
@@ -62,37 +68,56 @@ angular.module('ham-app')
             .data(data)
             .enter().append("g")
             .attr("class","bar normal")
-            .attr("transform", function(d){
-                return "translate (0,"+yScale(d.id)+")";
+            .attr("transform", function(d,i){
+                return "translate ("+margin.left+","+yScale(i)+")";
             });
         
         var rects = bars.append("rect")
+            .attr("width",0)
             .attr("height", yScale.rangeBand())
             .transition()
             .delay(function(d){
                 return 0;
             })
             .duration(function(d){
-                return timeScale(d.runTimeS);
+                return timeScale(+d.runTimeS);
             })
-            .attr("width", function(d){ return xScale(d.runTimeS); });
+            .attr("width", function(d){ 
+                return xScale(+d.runTimeS); 
+            });
 
         bars.append("text")
-            .text(function(d) { return d.trackName + ": " + d.runTimeS + " seconds"; })
-            .attr("class","label")
+            .text(function(d) { return d.runTimeS + " seconds"; })
+            .attr("class","floatinglabel")
+            .attr("x", 5)
             .attr("y", .7*height/data.length)
-            .attr("x", -3);
+            .transition()
+            .delay(function(d){
+                return 0;
+            })
+            .duration(function(d){
+                return timeScale(+d.runTimeS);
+            })
+            .attr("x", function(d){
+                return xScale(+d.runTimeS) - 5
+            });
             
         svg.append("g")
             .data(data)
             .attr("class","x axis")
-            .attr("transform", "translate(0," + (height - margin.bottom) + ")")
+            .attr("transform", "translate("+margin.left+","+(height - margin.bottom) +")")
             .call(xAxis);
 
         svg.append("g")
             .data(data)
             .attr("class","y axis")
+            .attr("transform","translate("+margin.left+",0)")
             .call(yAxis);
+            
+        svg.append("text")
+            .attr("class","axislabel")
+            .attr("transform","translate("+.5*(margin.left+width)+","+(height-10)+")")
+            .text("Song Run Time")
 
     }
   });

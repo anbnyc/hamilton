@@ -22,7 +22,7 @@ angular.module('ham-app')
             data[i].endYear = new Date(data[i].endYear,1,1);
         }
         
-        var margin = {top: 10, bottom: 20, left: 30, right: 20}
+        var margin = {top: 10, bottom: 40, left: 30, right: 20}
             , width = scope.vizWidth
             , height = scope.vizHeight;
 
@@ -109,6 +109,11 @@ angular.module('ham-app')
             .data(data)
             .attr("class","y axis")
             .call(yAxis);
+
+        svg.append("text")
+            .attr("class","axislabel")
+            .attr("transform","translate("+(width/2)+","+(height-10)+")")
+            .text("Historical Year")
 
     }
   });

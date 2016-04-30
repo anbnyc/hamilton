@@ -15,13 +15,15 @@ app.controller('HamiltonController', function($scope, $http, Viz){
         lyrics: new Viz("Musical Lyrics","../data/longLyrics.json","What are the lyrics in each song?")
     };
     
+    $scope.vizzes.bars.seq = "Simultaneously";
+    
     $scope.drilldown = {
         data: []
     };
     
     $scope.vizWidth = angular.element(document.querySelector(".vizContainer"))[0].offsetWidth;
     $scope.vizHeight = angular.element(document.querySelector(".vizContainer"))[0].offsetHeight;
-        
+    
 });
 
 app.factory('Viz', function($http){
@@ -31,7 +33,6 @@ app.factory('Viz', function($http){
        self.label = label;
        self.file = file; 
        self.headline = headline;
-       
        $http.get(self.file)
             .then(function(response){
                 self.data = response.data;
