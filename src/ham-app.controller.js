@@ -11,8 +11,8 @@ app.controller('HamiltonController', function($scope, $http, Viz){
     $scope.vizzes = {
         gantt: new Viz("Soundtrack Chronology", "data/albumTracks.json","In what years did the real life events that this song describes occur?"),
         matrix: new Viz("Character Co-occurrence","data/cooccurence.json","How many songs does each character share with each other character?"),
-        bars: new Viz("Album Run Time","data/albumTracks.json","What is the (relative) duration of each album song?"),
-        lyrics: new Viz("Musical Lyrics","data/longLyrics.json","What are the lyrics in each song?")
+        bars: new Viz("Album Run Time","data/albumTracks.json","What is the (relative) duration of each album song?")
+        //lyrics: new Viz("Musical Lyrics","data/longLyrics.json","What are the lyrics in each song?")
     };
     
     $scope.vizzes.bars.seq = "Simultaneously";
