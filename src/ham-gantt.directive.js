@@ -18,8 +18,8 @@ angular.module('ham-app')
         var data = scope.data;
         
         for(var i = 0; i<data.length; i++){
-            data[i].startYear = new Date(data[i].startYear,1,1);
-            data[i].endYear = new Date(data[i].endYear,1,1);
+            data[i].startYear = new Date(data[i].startYearRaw,1,1);
+            data[i].endYear = new Date(data[i].endYearRaw,1,1);
         }
         
         var margin = {top: 10, bottom: 40, left: 30, right: 20}
