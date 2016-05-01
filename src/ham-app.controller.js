@@ -6,7 +6,7 @@ var app = angular.module('ham-app', ['ngMaterial']);
 
 app.controller('HamiltonController', function($scope, $http, Viz){
     
-    $scope.currentViz = "matrix";
+    $scope.currentViz = "gantt";
     
     $scope.vizzes = {
         gantt: new Viz("Soundtrack Chronology", "data/albumTracks.json","In what years did the real life events that this song describes occur?"),
