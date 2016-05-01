@@ -15,7 +15,7 @@
     <script type='text/javascript' src="src/ham-bars.directive.js"></script>
 </head>
 <body ng-controller="HamiltonController as hamCtrl">
-    <div layout-xs="row" layout-padding>
+    <div layout="row" layout-xs="column" layout-padding>
         <div flex="30" layout-padding class="ham-sidebar">
             <h2>Not Throwing Away My Plot</h2>
             <h5 class="sidebar-child">Hamilton Original Broadway Cast Recording, visualized</h5>
@@ -27,12 +27,12 @@
                     </md-option>
                 </md-select>
             </md-input-container>
-            <div ng-show="currentViz=='bars'" layout-xs="row" flex>
+            <div ng-show="currentViz=='bars'" layout="row" layout-xs="column" flex>
                 <md-input-container class="sidebar-child">
                     <label>Display Songs:</label>
                     <md-select ng-model="vizzes.bars.seq">
                         <md-option>Simultaneously</md-option>
-                        <!--<md-option>Sequentially</md-option>-->
+                        <md-option>Sequentially</md-option>
                     </md-select>
                 </md-input-container>
                 <md-input-container class="sidebar-child">
@@ -78,7 +78,8 @@
                     style="height:100%;width:100%"
                     viz-width="vizWidth"
                     viz-height="vizHeight"
-                    sort="vizzes.bars.sort">
+                    sort="vizzes.bars.sort"
+                    seq="vizzes.bars.seq">
                 </ham-bars>
             </div>
         </div>                

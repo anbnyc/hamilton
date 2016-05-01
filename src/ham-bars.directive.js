@@ -11,58 +11,98 @@ angular.module('ham-app')
             data: '=',
             vizWidth: '=',
             vizHeight: '=',
-            sort: '='
+            sort: '=',
+            seq: '='
         }
     }
     
     function link(scope,element,attr){
         var data = scope.data;
-        var first = true;
+        
+        var runTimeT = 0;
+        for(var i = 0;i<data.length;i++){
+            data[i].runTimeT = runTimeT;
+            runTimeT += data[i].runTimeS;            
+        }
+        
+        var flag = {
+            sort: true,
+            seq: true
+        };
 
         scope.$watch("sort",function(){
-            if(first){
-                first = false;
+            if(flag.sort){
+                flag.sort = false;
             } else {
-                update(scope.sort);                
+                updateSortOrder(scope.sort);                
             }
         }, true);
         
-        function update(order){
-            
+        scope.$watch("seq",function(){
+            if(flag.seq){
+                flag.seq = false;
+            } else {
+                updateDisplayOrder(scope.seq);
+            }
+        });
+        
+        function updateDisplayOrder(order){      
+            d3.selectAll("g.bar rect")
+                .attr("width",0)
+                .transition()
+                .delay(function(d,i){
+                    if(order == "Simultaneously"){
+                        return 0;
+                    } else {
+                        return timeScale(+d.runTimeT) - 500;
+                    }
+                })
+                .duration(function(d){
+                    return timeScale(+d.runTimeS);
+                })
+                .attr("width", function(d){
+                    return xScale(+d.runTimeS);
+                });
+            d3.selectAll("g.bar text")
+                .attr("x",0)
+                .transition()
+                .delay(function(d,i){
+                    if(order == "Simultaneously"){
+                        return 0;
+                    } else {
+                        return timeScale(+d.runTimeT) - 500;
+                    }
+                })
+                .duration(function(d){
+                    return timeScale(+d.runTimeS);
+                })
+                .attr("x", function(d){
+                    return xScale(+d.runTimeS);
+                });
+        }
+        
+        function updateSortOrder(order){
             var sorter = function(a,b){
                 if(order=="Length order"){
                     return b.runTimeS - a.runTimeS;
                 } else {
-                    return b.id - a.id;
-                } 
+                    return a.id - b.id;
+                }
             }
-            
             data = data.sort(sorter);
             svg.selectAll('g.bar').sort(sorter);
-            
             yScale.domain(
                 data.map(function(d,i) { return i; })
             );
-            
-            var transition = svg.transition().duration(250);
-            
-            transition
+            var transitionSort = svg.transition().duration(250);
+            transitionSort
                 .selectAll('g.bar')
                 .attr("transform", function(d,i){
                     return "translate ("+margin.left+","+yScale(i)+")";
                 });
-                
-            transition
+            transitionSort
                 .select('.y.axis')
                 .call(yAxis);
-                
-            // svg.select('.y.axis')
-            //     .selectAll("g.tick text")
-            //     .attr("transform", function(d,i){
-            //         console.log(i);
-            //         console.log(d);
-            //         return "translate (0,"+yScale(i)+")";
-            //     });
         };
         
         var margin = {top: 10, bottom: 40, left: 250, right: 20}
@@ -145,7 +185,7 @@ angular.module('ham-app')
                 return timeScale(+d.runTimeS);
             })
             .attr("x", function(d){
-                return xScale(+d.runTimeS) - 5
+                return xScale(+d.runTimeS) - 5;
             });
             
         svg.append("g")
