@@ -46,7 +46,7 @@ angular.module('ham-app')
         
         var yAxis = d3.svg.axis()
             .scale(scale)
-            .orient("right");
+            .orient("left");
                                 
         var svg = d3.select("ham-matrix")
             .append('svg')
@@ -89,9 +89,9 @@ angular.module('ham-app')
             .data(data)
             .attr("class","y axis hidden matrixaxis")
             .call(yAxis)
-            .attr("transform","translate("+2*margin+",0)")
+            .attr("transform","translate("+(side+2*margin+15)+",0)")
           .selectAll("text")
-            .style("text-anchor","end")
+            .style("text-anchor","start")
             .attr("transform","translate(-5,0)");
         
         svg.append("g")
