@@ -6,7 +6,7 @@
       "trackName":"Alexander Hamilton",
       "startYearRaw":1765,
       "endYearRaw":1772,
-      "dateConfidence":0,
+      "dateNotes":"1765: Hamilton is ten;1772: Hamilton comes to America for school",
       "actors":[
          "Leslie Odom, Jr.",
          "Anthony Ramos",
@@ -26,7 +26,7 @@
       "trackName":"Aaron Burr, Sir",
       "startYearRaw":1776,
       "endYearRaw":1776,
-      "dateConfidence":0,
+      "dateNotes":"1776: (sung)",
       "actors":[
          "Lin-Manuel Miranda",
          "Leslie Odom, Jr.",
@@ -41,9 +41,9 @@
       "disc":1,
       "trackNumber":3,
       "trackName":"My Shot",
-      "startYearRaw":1774,
+      "startYearRaw":1773,
       "endYearRaw":1774,
-      "dateConfidence":0,
+      "dateNotes":"1773: Hamilton gets a scholarship to Kings College;1774: Hamilton is nineteen",
       "actors":[
          "Lin-Manuel Miranda",
          "Anthony Ramos",
@@ -59,9 +59,9 @@
       "disc":1,
       "trackNumber":4,
       "trackName":"The Story of Tonight",
-      "startYearRaw":1774,
-      "endYearRaw":1774,
-      "dateConfidence":0,
+      "startYearRaw":1776,
+      "endYearRaw":1776,
+      "dateNotes":"1776: (based on context)",
       "actors":[
          "Lin-Manuel Miranda",
          "Anthony Ramos",
@@ -76,9 +76,9 @@
       "disc":1,
       "trackNumber":5,
       "trackName":"The Schuyler Sisters",
-      "startYearRaw":1774,
-      "endYearRaw":1774,
-      "dateConfidence":0,
+      "startYearRaw":1776,
+      "endYearRaw":1776,
+      "dateNotes":"1776: Common Sense is published;1776: Jefferson writes the Declaration of Independence",
       "actors":[
          "Renée Elise Goldsberry",
          "Phillipa Soo",
@@ -95,7 +95,7 @@
       "trackName":"Farmer Refuted",
       "startYearRaw":1774,
       "endYearRaw":1774,
-      "dateConfidence":0,
+      "dateNotes":"1774: Seabury writes and distributes \"Free Thoughts\"",
       "actors":[
          "Thayne Jasperson",
          "Lin-Manuel Miranda",
@@ -107,10 +107,10 @@
       "id":1.07,
       "disc":1,
       "trackNumber":7,
-      "trackName":"You'll Be Back",
-      "startYearRaw":1775,
+      "trackName":"Youll Be Back",
+      "startYearRaw":1773,
       "endYearRaw":1775,
-      "dateConfidence":0,
+      "dateNotes":"1773: Boston Tea Party;1775: George III issues his Proclamation of Rebellion",
       "actors":[
          "Jonathan Groff",
          "Company"
@@ -124,7 +124,7 @@
       "trackName":"Right Hand Man",
       "startYearRaw":1776,
       "endYearRaw":1776,
-      "dateConfidence":0,
+      "dateNotes":"1776: General Howe arrives in New York harbor;1776: Battle of Long Island / Battle of Brooklyn",
       "actors":[
          "Christopher Jackson",
          "Lin-Manuel Miranda",
@@ -137,10 +137,10 @@
       "id":1.09,
       "disc":1,
       "trackNumber":9,
-      "trackName":"A Winter's Ball",
+      "trackName":"A Winters Ball",
       "startYearRaw":1780,
       "endYearRaw":1780,
-      "dateConfidence":0,
+      "dateNotes":"1780: Dance held while American army in New Jersey",
       "actors":[
          "Leslie Odom, Jr.",
          "Lin-Manuel Miranda",
@@ -155,7 +155,7 @@
       "trackName":"Helpless",
       "startYearRaw":1780,
       "endYearRaw":1780,
-      "dateConfidence":0,
+      "dateNotes":"1780: Hamilton meets Eliza Schuyler",
       "actors":[
          "Phillipa Soo",
          "Company"
@@ -169,7 +169,7 @@
       "trackName":"Satisfied",
       "startYearRaw":1780,
       "endYearRaw":1780,
-      "dateConfidence":0,
+      "dateNotes":"1780: Hamilton marries Eliza Schuyler",
       "actors":[
          "Renée Elise Goldsberry",
          "Company"
@@ -181,9 +181,9 @@
       "disc":1,
       "trackNumber":12,
       "trackName":"The Story of Tonight (Reprise)",
-      "startYearRaw":1780,
+      "startYearRaw":1777,
       "endYearRaw":1780,
-      "dateConfidence":0,
+      "dateNotes":"1777: Burr is commissioned Lieutenant Colonel;1780: Burr maintains a relationship with Theodosia",
       "actors":[
          "Anthony Ramos",
          "Okieriete Onaodowan",
@@ -200,7 +200,7 @@
       "trackName":"Wait For It",
       "startYearRaw":1778,
       "endYearRaw":1781,
-      "dateConfidence":0,
+      "dateNotes":"1778: Theodosia's husband is British governor of Georgia;1781:Burr's relationship with Theodosia continues",
       "actors":[
          "Leslie Odom, Jr.",
          "Company"
@@ -212,9 +212,9 @@
       "disc":1,
       "trackNumber":14,
       "trackName":"Stay Alive",
-      "startYearRaw":1776,
+      "startYearRaw":1777,
       "endYearRaw":1780,
-      "dateConfidence":0,
+      "dateNotes":"1777: American army spends winter at Valley Forge;1778: General Lee, er, underperforms at Battle of Monmouth;1778: Laurens and Lee duel;1780: Lafayette writes the French to ask for aid",
       "actors":[
          "Company"
       ],
@@ -225,9 +225,9 @@
       "disc":1,
       "trackNumber":15,
       "trackName":"Ten Duel Commandments",
-      "startYearRaw":1777,
+      "startYearRaw":1778,
       "endYearRaw":1778,
-      "dateConfidence":0,
+      "dateNotes":"1778: Laurens and Lee duel",
       "actors":[
          "Anthony Ramos",
          "Lin-Manuel Miranda",
@@ -244,7 +244,7 @@
       "trackName":"Meet Me Inside",
       "startYearRaw":1781,
       "endYearRaw":1781,
-      "dateConfidence":0,
+      "dateNotes":"1781: Hamilton resigns from Washington's staff",
       "actors":[
          "Lin-Manuel Miranda",
          "Leslie Odom, Jr.",
@@ -261,7 +261,7 @@
       "trackName":"That Would Be Enough",
       "startYearRaw":1781,
       "endYearRaw":1781,
-      "dateConfidence":0,
+      "dateNotes":"1781: Eliza becomes pregnant",
       "actors":[
          "Phillipa Soo",
          "Lin-Manuel Miranda"
@@ -275,7 +275,7 @@
       "trackName":"Guns and Ships",
       "startYearRaw":1779,
       "endYearRaw":1781,
-      "dateConfidence":0,
+      "dateNotes":"1779: Lafayette returns to France;1780: Lafayette sails back to America;1781: Washington joins forces with Rochambeau",
       "actors":[
          "Leslie Odom, Jr.",
          "Daveed Diggs",
@@ -291,7 +291,7 @@
       "trackName":"History Has Its Eyes On You",
       "startYearRaw":1781,
       "endYearRaw":1781,
-      "dateConfidence":0,
+      "dateNotes":"1781: (based on context)",
       "actors":[
          "Christopher Jackson",
          "Lin-Manuel Miranda",
@@ -306,7 +306,7 @@
       "trackName":"Yorktown (The World Turned Upside Down)",
       "startYearRaw":1781,
       "endYearRaw":1781,
-      "dateConfidence":0,
+      "dateNotes":"1781: Battle of Yorktown, British surrender",
       "actors":[
          "Company"
       ],
@@ -319,7 +319,7 @@
       "trackName":"What Comes Next?",
       "startYearRaw":1778,
       "endYearRaw":1781,
-      "dateConfidence":0,
+      "dateNotes":"1778: France goes to war with England;1781: America wins independence from England",
       "actors":[
          "Jonathan Groff"
       ],
@@ -332,7 +332,7 @@
       "trackName":"Dear Theodosia",
       "startYearRaw":1782,
       "endYearRaw":1783,
-      "dateConfidence":0,
+      "dateNotes":"1782: Philip Hamilton is born;1783: Theodosia Burr is born",
       "actors":[
          "Leslie Odom, Jr.",
          "Lin-Manuel Miranda"
@@ -345,8 +345,8 @@
       "trackNumber":23,
       "trackName":"Non-Stop",
       "startYearRaw":1783,
-      "endYearRaw":1789,
-      "dateConfidence":0,
+      "endYearRaw":1800,
+      "dateNotes":"1783: Hamilton moves to New York to practice law;1783: Angelica goes to London with her husband;1787: Hamilton attends Constitutional Convention;1788: Federalist Papers printed;1789: Hamilton becomes Secretary of the Treasury;1800: First murder trial in the United States is held",
       "actors":[
          "Leslie Odom, Jr.",
          "Lin-Manuel Miranda",
@@ -364,7 +364,7 @@
       "trackName":"What'd I Miss?",
       "startYearRaw":1789,
       "endYearRaw":1789,
-      "dateConfidence":0,
+      "dateNotes":"1789: (spoken);1789: Jefferson comes home",
       "actors":[
          "Daveed Diggs",
          "Leslie Odom, Jr.",
@@ -380,7 +380,7 @@
       "trackName":"Cabinet Battle #1",
       "startYearRaw":1790,
       "endYearRaw":1791,
-      "dateConfidence":0,
+      "dateNotes":"1790: Hamilton writes First Report on the Public Credit;1791: Whiskey Rebellion breaks out",
       "actors":[
          "Christopher Jackson",
          "Daveed Diggs",
@@ -396,7 +396,7 @@
       "trackName":"Take A Break",
       "startYearRaw":1791,
       "endYearRaw":1791,
-      "dateConfidence":0,
+      "dateNotes":"1791: Philip Hamilton turns nine",
       "actors":[
          "Phillipa Soo",
          "Anthony Ramos",
@@ -412,7 +412,7 @@
       "trackName":"Say No To This",
       "startYearRaw":1791,
       "endYearRaw":1791,
-      "dateConfidence":0,
+      "dateNotes":"1791: Hamilton begins involvement with Maria Reynolds;1791: Hamilton receives letter from James Reynolds",
       "actors":[
          "Jasmine Cephas-Jones",
          "Leslie Odom, Jr.",
@@ -428,8 +428,8 @@
       "trackNumber":5,
       "trackName":"The Room Where It Happens",
       "startYearRaw":1790,
-      "endYearRaw":1790,
-      "dateConfidence":0,
+      "endYearRaw":1799,
+      "dateNotes":"1790: Residence Act situates capital on Potomac River;1799: Mercer street named for General Mercer",
       "actors":[
          "Leslie Odom, Jr.",
          "Lin-Manuel Miranda",
@@ -446,7 +446,7 @@
       "trackName":"Schuyler Defeated",
       "startYearRaw":1791,
       "endYearRaw":1791,
-      "dateConfidence":0,
+      "dateNotes":"1791: Burr elected Senator from New York",
       "actors":[
          "Anthony Ramos",
          "Phillipa Soo",
@@ -460,9 +460,9 @@
       "disc":2,
       "trackNumber":7,
       "trackName":"Cabinet Battle #2",
-      "startYearRaw":1792,
-      "endYearRaw":1792,
-      "dateConfidence":0,
+      "startYearRaw":1793,
+      "endYearRaw":1793,
+      "dateNotes":"1793: King Louis XVI is overthrown and killed;1793: Hamilton writes Proclamation of Neutrality",
       "actors":[
          "Christopher Jackson",
          "Daveed Diggs",
@@ -476,9 +476,9 @@
       "disc":2,
       "trackNumber":8,
       "trackName":"Washington On Your Side",
-      "startYearRaw":1792,
-      "endYearRaw":1792,
-      "dateConfidence":0,
+      "startYearRaw":1793,
+      "endYearRaw":1793,
+      "dateNotes":"1793: (based on context)",
       "actors":[
          "Leslie Odom Jr.",
          "Daveed Diggs",
@@ -494,7 +494,7 @@
       "trackName":"One Last Time",
       "startYearRaw":1793,
       "endYearRaw":1796,
-      "dateConfidence":0,
+      "dateNotes":"1793: Jefferson resigns from the Cabinet;1796: Hamilton writes Washington's Farewell Address",
       "actors":[
          "Christopher Jackson",
          "Lin-Manuel Miranda",
@@ -509,7 +509,7 @@
       "trackName":"I Know Him",
       "startYearRaw":1796,
       "endYearRaw":1796,
-      "dateConfidence":0,
+      "dateNotes":"1796: Adams elected President",
       "actors":[
          "Jonathan Groff"
       ],
@@ -521,8 +521,8 @@
       "trackNumber":11,
       "trackName":"The Adams Administration",
       "startYearRaw":1795,
-      "endYearRaw":1797,
-      "dateConfidence":0,
+      "endYearRaw":1800,
+      "dateNotes":"1795: Hamilton departs the Cabinet (*but isn't fired);1797:      Adams is inaugurated;1800: Adams fires Hamilton's allies in the Cabinet",
       "actors":[
          "Company"
       ],
@@ -533,9 +533,9 @@
       "disc":2,
       "trackNumber":12,
       "trackName":"We Know",
-      "startYearRaw":1797,
+      "startYearRaw":1792,
       "endYearRaw":1797,
-      "dateConfidence":0,
+      "dateNotes":"1792: Hamilton confronted about affair (*but by Monroe and Muhlenberg, not Jefferson, Madison, and Burr).",
       "actors":[
          "Lin-Manuel Miranda",
          "Daveed Diggs",
@@ -549,9 +549,9 @@
       "disc":2,
       "trackNumber":13,
       "trackName":"Hurricane",
-      "startYearRaw":1767,
+      "startYearRaw":1797,
       "endYearRaw":1797,
-      "dateConfidence":0,
+      "dateNotes":"1797: (based on context)",
       "actors":[
          "Lin-Manuel Miranda",
          "Company"
@@ -565,7 +565,7 @@
       "trackName":"The Reynolds Pamphlet",
       "startYearRaw":1797,
       "endYearRaw":1797,
-      "dateConfidence":0,
+      "dateNotes":"1797: Hamilton publishes the Reynolds Pamphlet;1797: Angelica comes back from London",
       "actors":[
          "Company"
       ],
@@ -578,7 +578,7 @@
       "trackName":"Burn",
       "startYearRaw":1797,
       "endYearRaw":1797,
-      "dateConfidence":0,
+      "dateNotes":"1797: (based on context)",
       "actors":[
          "Phillipa Soo"
       ],
@@ -591,7 +591,7 @@
       "trackName":"Blow Us All Away",
       "startYearRaw":1801,
       "endYearRaw":1801,
-      "dateConfidence":0,
+      "dateNotes":"1801: Philip gradutes from Kings College;1801: Philip duels with George Eacker",
       "actors":[
          "Anthony Ramos",
          "Ariana DeBose",
@@ -609,7 +609,7 @@
       "trackName":"Stay Alive (Reprise)",
       "startYearRaw":1801,
       "endYearRaw":1801,
-      "dateConfidence":0,
+      "dateNotes":"1801: Philip dies from his wounds.",
       "actors":[
          "Lin-Manuel Miranda",
          "Anthony Ramos",
@@ -625,7 +625,7 @@
       "trackName":"It's Quiet Uptown",
       "startYearRaw":1802,
       "endYearRaw":1802,
-      "dateConfidence":0,
+      "dateNotes":"1802: The Hamiltons move to Harlem",
       "actors":[
          "Renée Elise Goldsberry",
          "Lin-Manuel Miranda",
@@ -641,7 +641,7 @@
       "trackName":"The Election of 1800",
       "startYearRaw":1800,
       "endYearRaw":1800,
-      "dateConfidence":0,
+      "dateNotes":"1800: Jefferson elected after Hamilton opposes Burr",
       "actors":[
          "Daveed Diggs",
          "Okieriete Onaodowan",
@@ -658,7 +658,7 @@
       "trackName":"Your Obedient Servant",
       "startYearRaw":1804,
       "endYearRaw":1804,
-      "dateConfidence":0,
+      "dateNotes":"1804: Burr and Hamilton exchange letters",
       "actors":[
          "Leslie Odom, Jr.",
          "Lin-Manuel Miranda",
@@ -673,7 +673,7 @@
       "trackName":"Best of Wives and Best of Women",
       "startYearRaw":1804,
       "endYearRaw":1804,
-      "dateConfidence":0,
+      "dateNotes":"1804: Hamilton writes his final letter to Eliza",
       "actors":[
          "Phillipa Soo",
          "Lin-Manuel Miranda"
@@ -687,7 +687,7 @@
       "trackName":"The World Was Wide Enough",
       "startYearRaw":1804,
       "endYearRaw":1804,
-      "dateConfidence":0,
+      "dateNotes":"1804: Burr kills Hamilton in a duel",
       "actors":[
          "Leslie Odom, Jr.",
          "Lin-Manuel Miranda",
@@ -702,7 +702,7 @@
       "trackName":"Who Lives, Who Dies, Who Tells Your Story",
       "startYearRaw":1804,
       "endYearRaw":1804,
-      "dateConfidence":0,
+      "dateNotes":"1804: (based on context);*1806: Eliza establishes orphanage in New York City;*1848: Washington Monument is constructed;*1854: Eliza passes away at age 97",
       "actors":[
          "Company"
       ],

@@ -9,6 +9,7 @@ angular.module('ham-app')
         restrict: 'E',
         scope: { 
             data: '=',
+            drilldown: '=',
             vizWidth: '=',
             vizHeight: '='
         }
@@ -85,6 +86,10 @@ angular.module('ham-app')
                 .attr("class","bar normal")
                 .select(".tooltip")
                 .remove();
+            })
+            .on('click',function(d){
+                scope.drilldown.data = d.dateNotes.split(";");
+                scope.$apply();
             });
         
         var rects = bars.append("rect")

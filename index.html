@@ -27,7 +27,7 @@
                     </md-option>
                 </md-select>
             </md-input-container>
-            <div ng-show="currentViz=='bars'" layout="row" layout-xs="column" flex>
+            <div ng-show="currentViz=='bars'" layout="column" flex>
                 <md-input-container class="sidebar-child">
                     <label>Display Songs:</label>
                     <md-select ng-model="vizzes.bars.seq">
@@ -44,7 +44,7 @@
                 <md-input-container>
             </div>
             <div id="ham-drilldown" ng-show="drilldown.data.length > 0">
-                <h4>Shared songs:</h4>
+                <h4 ng-bind="vizzes[currentViz].details"></h4>
                 <ul ng-show="drilldown.data != 'NA'">
                     <li ng-repeat="item in drilldown.data" ng-bind="item"></li>
                 </ul>
@@ -56,6 +56,7 @@
                 <ham-gantt
                     ng-if="vizzes.gantt.data"
                     data="vizzes.gantt.data" 
+                    drilldown="drilldown"
                     style="height:100%;width:100%"
                     viz-width="vizWidth"
                     viz-height="vizHeight">
