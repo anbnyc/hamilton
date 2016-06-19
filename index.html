@@ -1,11 +1,11 @@
-<html ng-app="ham-app">
+<html>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.9/angular-material.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.6/angular-material.layouts.css">
     <link rel="stylesheet" href="src/app.css">
@@ -14,7 +14,7 @@
     <script type='text/javascript' src="src/ham-matrix.directive.js"></script>
     <script type='text/javascript' src="src/ham-bars.directive.js"></script>
 </head>
-<body ng-controller="HamiltonController as hamCtrl">
+<body ng-app="ham-app" ng-controller="HamiltonController as hamCtrl">
     <div layout="row" layout-xs="column" layout-padding>
         <div flex="30" layout-padding class="ham-sidebar">
             <h2>Not Throwing Away My Plot</h2>
