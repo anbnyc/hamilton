@@ -28,13 +28,13 @@ content.forEach(function(each){
 
     //does this track exist?
     var thisTrack = data.filter(function(track){
-        return track.id === thisId;
+        return (track.id === thisId);
     });
     
     if(thisTrack.length === 1){
         //if yes, does this line exist?
         var thisLine = thisTrack[0].lyrics.filter(function(line){
-            return line.line_number === thisLineNumber;
+            return (line.line_number === thisLineNumber);
         });
         
         if(thisLine.length === 1){
@@ -83,7 +83,7 @@ var tracks = JSON.parse(file);
 tracks.forEach(function(track){
     var trackId = track.id;
     var lyrics = data.filter(function(lyricTrack){
-        return lyricTrack.id == trackId;
+        return (lyricTrack.id == trackId);
     });
     track.lyrics = lyrics[0].lyrics;
 });
